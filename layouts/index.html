@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section class="hero">
+  <p class="eyebrow">Explore DDD 2026</p>
+  <h1>{{ .Title }}</h1>
+  <div class="intro">{{ .Content }}</div>
+</section>
+<section>
+  <h2>The patterns</h2>
+  <div class="pattern-grid">
+    {{ range where .Site.RegularPages "Section" "patterns" }}
+      <a class="pattern-card" href="{{ .RelPermalink }}">
+        {{ with .Resources.GetMatch "avatar.*" }}<img src="{{ .RelPermalink }}" alt="">{{ end }}
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.attribution | default "Anonymous" }}</p>
+      </a>
+    {{ else }}
+      <p>The handbook will take shape here during the workshop.</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

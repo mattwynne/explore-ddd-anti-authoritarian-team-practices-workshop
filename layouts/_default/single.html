@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="pattern">
+  <p><a href="{{ .Site.Home.RelPermalink }}">← All patterns</a></p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Resources.GetMatch "avatar.*" }}<img class="avatar" src="{{ .RelPermalink }}" alt="{{ $.Params.avatar_alt | default $.Title }}">{{ end }}
+  <p class="byline">Contributed by {{ .Params.attribution | default "Anonymous" }}</p>
+  {{ .Content }}
+</article>
+{{ end }}
