@@ -4,3 +4,4 @@ title = "Non-Authoritarian Team Practices"
 
 [params]
   description = "A co-created handbook from Explore DDD 2026"
+  githubRepo = "mattwynne/explore-ddd-anti-authoritarian-team-practices-workshop"

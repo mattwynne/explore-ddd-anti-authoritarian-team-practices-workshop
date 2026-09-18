@@ -5,5 +5,8 @@
   {{ with .Resources.GetMatch "avatar.*" }}<img class="avatar" src="{{ .RelPermalink }}" alt="{{ $.Params.avatar_alt | default $.Title }}">{{ end }}
   <p class="byline">Contributed by {{ .Params.attribution | default "Anonymous" }}</p>
   {{ .Content }}
+  {{ with .File }}
+  <p class="source-link"><a href="https://github.com/{{ $.Site.Params.githubRepo }}/blob/main/content/{{ .Path }}">View source on GitHub</a></p>
+  {{ end }}
 </article>
 {{ end }}
